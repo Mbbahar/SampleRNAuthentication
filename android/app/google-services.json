@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "101077188976",
+    "project_id": "samplernauthentication",
+    "storage_bucket": "samplernauthentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101077188976:android:640dc63a48cb58e5ea0fb5",
+        "android_client_info": {
+          "package_name": "com.samplernauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101077188976-mi27ltfcdaa1i49sbmgd83krtg12o8ss.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samplernauthentication",
+            "certificate_hash": "ca2134980ec3525e3bad60b1153bf42928514a70"
+          }
+        },
+        {
+          "client_id": "101077188976-27a0d7rp96teknctlek0mcsp6389agj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp1j5RYDyCb7nM5y48LwsJSp0iwGcKPY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101077188976-27a0d7rp96teknctlek0mcsp6389agj5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,7 +3,7 @@ import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {login_screen} from '../styles/page_style';
 
-function FormComponent({setEmail, setPassword, onButtonText}) {
+function FormComponent({setEmail, setPassword, onButtonText, onPress}) {
   const [isShowing, setShowing] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ function FormComponent({setEmail, setPassword, onButtonText}) {
           name={isShowing ? 'eye-off' : 'eye'}></Icon>
       </View>
 
-      <TouchableOpacity style={login_screen.button}>
+      <TouchableOpacity style={login_screen.button} onPress={onPress}>
         <Text style={login_screen.buttonText}>{onButtonText}</Text>
       </TouchableOpacity>
     </View>

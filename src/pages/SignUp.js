@@ -1,11 +1,44 @@
 import React, {useState, useEffect} from 'react';
-import {ScrollView, View, KeyboardAvoidingView} from 'react-native';
+import {ScrollView, View, KeyboardAvoidingView, Alert} from 'react-native';
 import {login_screen} from '../styles/page_style';
 import {FormComponent} from '../components';
+
+import auth from '@react-native-firebase/auth';
 
 function SignUp(props) {
   const [UserEmail, setUserEmail] = useState('');
   const [UserPassword, setUserPassword] = useState('');
+
+  const __doSignUp = () => {
+    if (!UserEmail) {
+      Alert.alert('Error', 'Email required *');
+      return;
+    } else if (
+      !UserPassword &&
+      UserPassword.trim() &&
+      UserPassword.length > 6
+    ) {
+      Alert.alert('Error', 'Weak password, minimum 6 chars');
+      return;
+    } else {
+      __doCreateUser(UserEmail, UserPassword);
+      return;
+    }
+  };
+  const __doCreateUser = async () => {
+    try {
+      let response = await auth().createUserWithEmailAndPassword(
+        UserEmail,
+        UserPassword,
+      );
+      if (response) {
+        console.log(response);
+        Alert.alert('Successful Register', 'Welcome the React Native');
+      }
+    } catch (e) {
+      console.error(e.message);
+    }
+  };
 
   return (
     <ScrollView>
@@ -19,6 +52,7 @@ function SignUp(props) {
               setEmail={(email) => setUserEmail(email)}
               setPassword={(password) => setUserPassword(password)}
               onButtonText="SIGNUP"
+              onPress={() => __doSignUp()}
             />
           </View>
         </View>
